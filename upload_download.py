@@ -10,7 +10,7 @@ def main():
     uploaded_file = st.file_uploader("Upload an Excel file", type=["xlsx"])
 
     if uploaded_file is not None:
-        st.write('Processing')
+        st.write('Preview of DataFrame')
         try:
             # Read the Excel file
             df = pd.read_excel(uploaded_file,sheet_name='Receipt Import Template', skiprows=13)
