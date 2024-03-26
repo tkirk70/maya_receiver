@@ -38,7 +38,7 @@ def main():
 
 def get_download_link(text):
     # Generate a download link for the text file
-    href = f'<a href="data:text/plain;charset=utf-8,{text}" download="output.txt">Download as Text</a>'
+    href = f'<a href="data:text/plain;charset=utf-8,{text}" download="MayaReceiver{today}.txt">Download as Tab Delimited Text File</a>'
     return href
 
 if __name__ == "__main__":
