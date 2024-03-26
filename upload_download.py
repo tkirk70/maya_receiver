@@ -6,8 +6,7 @@ import openpyxl
 def main():
     st.set_page_config(layout="wide")
     st.title("Excel to Tab-Delimited Text Converter")
-    st.header('Maya inbound GICS03.20.24 TQL.xlsx')
-    st.subheader('Maya inbound GICS03.20.24 TQL.xlsx')
+    st.subheader('File must be in same format as Maya inbound GICS03.20.24 TQL.xlsx')
 
     # File upload section
     uploaded_file = st.file_uploader("Upload an Excel file", type=["xlsx"])
