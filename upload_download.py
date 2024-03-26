@@ -12,7 +12,7 @@ def main():
     if uploaded_file is not None:
         try:
             # Read the Excel file
-            df = pd.read_excel(uploaded_file, skiprows=13)
+            df = pd.read_excel(uploaded_file,sheet_name='Receipt Import Template', skiprows=13)
             df['Ref #'].fillna(method ='ffill', inplace=True)
             df['Notes'].fillna(method ='ffill', inplace=True)
             df['Serial#'] = ''
