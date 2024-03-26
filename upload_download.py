@@ -4,6 +4,7 @@ from datetime import date
 import openpyxl
 
 def main():
+    st.set_page_config(layout="wide")
     st.title("Excel to Tab-Delimited Text Converter")
 
     # File upload section
