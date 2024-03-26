@@ -28,7 +28,7 @@ def main():
             
             today = date.today()
             # Convert to tab-delimited text
-            output_text = df.to_csv(f'Maya-Receiver-{today}.txt', sep="\t", header=False, index=False)
+            output_text = df.to_csv(sep="\t", header=False, index=False)
 
             # Create a download link
             st.markdown(get_download_link(output_text), unsafe_allow_html=True)
