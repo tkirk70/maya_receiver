@@ -10,6 +10,7 @@ def main():
     uploaded_file = st.file_uploader("Upload an Excel file", type=["xlsx"])
 
     if uploaded_file is not None:
+        st.write('Processing')
         try:
             # Read the Excel file
             df = pd.read_excel(uploaded_file,sheet_name='Receipt Import Template', skiprows=13)
@@ -21,6 +22,10 @@ def main():
 
             # Convert date column to datetime format
             df['Lot#'] = formatted_date
+            
+            st.dataframe(df)
+            
+            
             today = date.today()
             # Convert to tab-delimited text
             output_text = df.to_csv(f'Maya-Receiver-{today}.txt', sep="\t", header=False, index=False)
@@ -28,6 +33,7 @@ def main():
             # Create a download link
             st.markdown(get_download_link(output_text), unsafe_allow_html=True)
         except Exception as e:
+            st.write('An Error Occured.')
             st.error(f"Error reading the file: {e}")
 
 def get_download_link(text):
