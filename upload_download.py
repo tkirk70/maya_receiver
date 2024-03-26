@@ -37,6 +37,7 @@ def main():
             st.error(f"Error reading the file: {e}")
 
 def get_download_link(text):
+    today = date.today()
     # Generate a download link for the text file
     href = f'<a href="data:text/plain;charset=utf-8,{text}" download="MayaReceiver{today}.txt">Download as Tab Delimited Text File</a>'
     return href
